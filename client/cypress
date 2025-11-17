@@ -1,0 +1,11 @@
+{
+  "name": "mern-testing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "cd client && npm install && cd ../server && npm install",
+    "test": "jest --config=jest.config.js",
+    "test:client": "jest --selectProjects client",
+    "test:server": "jest --selectProjects server"
+  }
+}

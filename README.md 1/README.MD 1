@@ -1,0 +1,240 @@
+📘 MERN Testing & Debugging – Project README
+📌 Overview
+
+This project is a MERN stack application (MongoDB, Express.js, React.js, Node.js) configured to demonstrate:
+
+Unit testing (React + Jest + Testing Library)
+
+Integration testing (Node/Express + Supertest)
+
+End-to-end testing (Cypress)
+
+Debugging techniques (client + server)
+
+CI/CD automation with GitHub Actions
+
+Code coverage reporting (Jest)
+
+The repository contains a full scaffolding for both client and server environments.
+
+🚀 Getting Started
+✅ 1. Clone the Project
+🟦 CLIENT SETUP (React)
+2. Install Dependencies
+cd client
+npm install
+3. Start the React App
+npm run dev
+React will start at:
+http://localhost:5173
+🟥 SERVER SETUP (Node + Express)
+4. Install Dependencies
+cd server
+npm install
+5. Start the Backend Server
+npm run dev
+Default server runs on:
+http://localhost:5000
+
+🧪 Running Tests
+🌐 1. Client Tests (React + Jest)
+
+Inside the client/ folder:
+
+Run all tests:
+npm test
+
+Run coverage:
+npm run coverage
+
+Coverage report becomes available in:
+client/coverage/
+
+🟥 2. Server Tests (Node + Jest + Supertest)
+
+Inside the server/ folder:
+
+Run tests:
+npm test
+
+Run coverage:
+npm run coverage
+
+Coverage report appears in:
+server/coverage/
+
+🧪 3. E2E Tests (Cypress)
+
+Inside the client/ folder:
+
+Open Cypress GUI:
+npx cypress open
+
+Run Cypress tests headless:
+npx cypress run
+
+🧰 Debugging Techniques Used
+
+This project includes built-in debugging tools for both client and server.
+
+🟦 Client Debugging (React)
+1️⃣ Error Boundaries
+
+The project includes an ErrorBoundary.jsx component:
+
+Captures UI crashes
+
+Displays fallback UI
+
+Helps identify component-level errors
+
+2️⃣ Console Debugging
+
+React DevTools + browser console logs are used in development mode for tracing props, state, and API calls.
+
+🟥 Server Debugging (Node.js/Express)
+1️⃣ Global Error Handler
+
+errorHandler.js captures:
+
+Uncaught exceptions
+
+Controller errors
+
+Mongoose errors
+
+It returns consistent JSON error responses.
+
+2️⃣ Logging Middleware
+
+Request logs show:
+
+Methods
+
+Routes
+
+Request bodies
+
+Error stack traces
+
+3️⃣ Debugging with VSCode
+
+Using built-in Node debugging:
+"scripts": {
+  "debug": "nodemon --inspect server.js"
+}
+
+🧪 Testing Approach & Coverage Explanation
+
+This project uses a layered testing strategy common in production MERN apps:
+
+1️⃣ Unit Tests
+
+Used for:
+
+Individual React components
+
+Utility functions
+
+Pure logic (helpers, formatters)
+
+Tools:
+
+Jest
+
+React Testing Library (RTL)
+
+Examples:
+
+Button.test.jsx
+
+App.test.jsx
+
+2️⃣ Integration Tests
+
+Used in the backend to verify:
+
+Express route behavior
+
+Controller logic
+
+Database interaction
+
+Authentication middleware
+
+Tools:
+
+Jest
+
+Supertest
+
+Example:
+
+posts.test.js
+
+3️⃣ End-to-End Tests
+
+Simulate real user flows such as:
+
+Viewing posts
+
+Navigating pages
+
+Form interactions
+
+Tools:
+
+Cypress
+
+Example:
+
+posts.cy.js
+
+📊 Understanding Coverage
+
+Running coverage creates reports like:
+
+client/coverage/index.html
+
+server/coverage/index.html
+
+Coverage includes:
+
+✔ Statements
+
+Measures how many total lines of logic were executed.
+
+✔ Branches
+
+Checks conditional paths like:
+if (...) { ... } else { ... }
+
+✔ Functions
+
+Ensures each function was called.
+
+✔ Lines
+
+Counts actual executed lines.
+
+This project targets:
+
+≥80% coverage for React components
+
+≥70% backend coverage
+
+Can be expanded as needed
+
+⚙️ CI/CD (GitHub Actions)
+
+A workflow file is included:
+.github/workflows/ci.yml
+It automatically:
+
+Installs dependencies
+
+Runs client + server tests
+
+Generates coverage reports
+
+Uploads coverage as artifacts
